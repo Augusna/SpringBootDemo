@@ -11,7 +11,7 @@ spec:
     targetPort: 8080
     protocol: TCP
   selector:
-    app: maven
+    app: k8s-first-test
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -22,11 +22,11 @@ spec:
   template:
     metadata:
       labels:
-        app: maven
+        app: k8s-first-test
     spec:
       containers:
         - name: maven
-          image: 47.102.122.97:5000/maven:latest
+          image: 47.102.122.97:5000/k8s-first-test:latest
           ports:
           - containerPort: 8080
           env:
